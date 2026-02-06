@@ -1,0 +1,31 @@
+package com.example.project_manager.dto;
+
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@NoArgsConstructor
+@Getter
+@Setter
+public class ProjectRequestDto {
+    @NotNull
+    @NotEmpty
+    @Size(min = 3)
+    private String name;
+    @Size(max = 500)
+    private String description;
+    @NotNull
+    @Pattern(regexp="^(PLANNED|IN_PROGRESS|DONE)?")
+    private String status;
+
+    ProjectRequestDto(String name, String description, String status) {
+                this.name = name;
+                this.description = description;
+                this.status = status;
+    }
+}
