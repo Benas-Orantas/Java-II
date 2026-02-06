@@ -20,6 +20,7 @@ public class ProjectRequestDto {
     @Size(max = 500)
     private String description;
     @NotNull
+    @NotEmpty
     @Pattern(regexp="^(PLANNED|IN_PROGRESS|DONE)?")
     private String status;
 

@@ -16,15 +16,8 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class ProjectResponseDto {
     private Long id;
-    @NotNull
-    @NotEmpty
-    @Size(min = 3)
     private String name;
-    @Size(max = 500)
     private String description;
-    @NotNull
-    @NotEmpty
-    @Pattern(regexp="^(PLANNED|IN_PROGRESS|DONE)?")
     private String status;
     private LocalDateTime createdAt;
 
